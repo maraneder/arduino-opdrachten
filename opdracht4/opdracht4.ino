@@ -24,7 +24,8 @@ void setup()
 // functie om potmeterwaarde uit te lezen
 long readPotmeter() {
   int potmeterWaarde = analogRead(potPin);
-  long waarde = map(potmeterWaarde, 0, 1023, 0, 7);
+  Serial.println(potmeterWaarde);
+  long waarde = map(potmeterWaarde, 0, 945, 0, 7);
   return waarde;
 }
 
@@ -35,6 +36,7 @@ void loop()
   	uit();
   	long waarde = readPotmeter();
   	lampjesAan(waarde);
+    Serial.println(waarde);
 }
 
 // lampjes aan zetten bij bepaalde waarden
