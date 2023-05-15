@@ -6,7 +6,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // lampje 1 aan voor 1000 ms, dan uit en dan lampje 2 aan voor 1000ms, gaan om de beurt uit
   digitalWrite(11, HIGH);
   digitalWrite(12, LOW);
   delay(1000);

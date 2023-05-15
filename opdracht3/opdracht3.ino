@@ -16,7 +16,7 @@ void setup() {
   delay(500);
   Serial.println(F("init"));
 }
-
+// tussenfase zodat hij niet flikkert tijdens indrukken
 void ing_aan() {
   if(digitalRead(BUTTON_PIN) == LOW){
     state = STATE_LOSLATEN_AAN;
@@ -24,7 +24,7 @@ void ing_aan() {
     delay(DELAY_MS);
   }
 }
-
+// als de knop is losgelaten voor de eerste keer, gaat lampje uit
 void los_aan(){
   if(digitalRead(BUTTON_PIN) == HIGH){
     state = STATE_INGEDRUKT_UIT;
@@ -33,7 +33,7 @@ void los_aan(){
     delay(DELAY_MS);
   }
 }
-
+// ook een tussenfase
 void ing_uit(){
   if(digitalRead(BUTTON_PIN) == LOW){
     state = STATE_LOSLATEN_UIT;
@@ -41,7 +41,7 @@ void ing_uit(){
     delay(DELAY_MS);
   }
 }
-
+// als de knop is losgelaten bij de 2e keer, dan gaat de lamp aan
 void los_uit(){
   // Serial.println(F("los uit called"));
   if(digitalRead(BUTTON_PIN) == HIGH){
@@ -51,7 +51,7 @@ void los_uit(){
     delay(DELAY_MS);
   }
 }
-
+// doorloopt om te kijken in welke status de knop zit, zodat de knop niet knippert tijdens langer ingedrukt houden
 void check_action(){
   switch(state){
     case STATE_INGEDRUKT_AAN: 

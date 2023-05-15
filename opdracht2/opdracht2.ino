@@ -14,7 +14,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // cyclus lampjes aan en uit zodat het het effect krijgt dat ze doorlopen
   delay(DELAY);
   digitalWrite(12, HIGH);
   delay(DELAY);
